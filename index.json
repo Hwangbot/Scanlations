@@ -1,0 +1,58 @@
+{
+  "name": "Hwangbot",
+  "badgeLabel": "HWAN",
+  "signingKey": "5c3fe3e4d43d13058041a55263add48fbd2461397fb5f0b28b15af400029e1b4",
+  "contact": {
+    "website": "https://github.com/Hwangbot/Scanlations"
+  },
+  "extensionList": {
+    "extensions": [
+      {
+        "name": "Asura Scans",
+        "packageName": "eu.kanade.tachiyomi.extension.en.asurascans",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/Hwangbot/Scanlations/repo/apk/tachiyomi-en.asurascans-v1.6.69.apk",
+          "iconUrl": "https://raw.githubusercontent.com/Hwangbot/Scanlations/repo/icon/eu.kanade.tachiyomi.extension.en.asurascans.png",
+          "jarUrl": "https://raw.githubusercontent.com/Hwangbot/Scanlations/repo/apk/tachiyomi-en.asurascans-v1.6.69.jar"
+        },
+        "extensionLib": "1.6",
+        "versionCode": "106069",
+        "versionName": "1.6.69",
+        "contentWarning": "CONTENT_WARNING_SAFE",
+        "sources": [
+          {
+            "id": "6247824327199706550",
+            "name": "Asura Scans",
+            "language": "en",
+            "homeUrl": "https://asurascans.com"
+          }
+        ]
+      },
+      {
+        "name": "Comix",
+        "packageName": "eu.kanade.tachiyomi.extension.en.comix",
+        "resources": {
+          "apkUrl": "https://raw.githubusercontent.com/Hwangbot/Scanlations/repo/apk/tachiyomi-en.comix-v1.6.45.apk",
+          "iconUrl": "https://raw.githubusercontent.com/Hwangbot/Scanlations/repo/icon/eu.kanade.tachiyomi.extension.en.comix.png",
+          "jarUrl": "https://raw.githubusercontent.com/Hwangbot/Scanlations/repo/apk/tachiyomi-en.comix-v1.6.45.jar"
+        },
+        "extensionLib": "1.6",
+        "versionCode": "106045",
+        "versionName": "1.6.45",
+        "contentWarning": "CONTENT_WARNING_MIXED",
+        "sources": [
+          {
+            "id": "7537715367149829912",
+            "name": "Comix",
+            "language": "en",
+            "homeUrl": "https://comix.to",
+            "mirrorUrls": [
+              "https://comix.to",
+              "https://comix.ws"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
