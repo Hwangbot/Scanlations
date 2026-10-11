@@ -1,13 +1,32 @@
-# My Mihon Extension Store
+# Scanlations
 
-Template that publishes a Mihon v2 extension store (`index.pb`) to the `repo` branch.
+Personal [Tachimanga](https://tachimanga.app/) / [Mihon](https://mihon.app/) extension repository.
 
-1. Put your Keiyoushi-style Gradle extension project in this repo (or drop prebuilt signed APKs in `apk/` and remove the Gradle step).
-2. Add secrets: `SIGNING_KEY` (base64 .jks), `ALIAS`, `KEY_STORE_PASSWORD`, `KEY_PASSWORD`.
-3. Edit `manifest.json` (one entry per APK, bump `versionCode` on every release).
-4. Push to `main`. Users add: `https://github.com/<you>/<repo>/raw/repo/index.pb`
+| Extension | Site |
+|---|---|
+| Comix | https://comix.to |
+| Asura Scans | https://asurascans.com |
 
-Local test:
-    pip install grpcio-tools protobuf
-    python -m grpc_tools.protoc -I scripts --python_out=scripts scripts/index.proto
-    python scripts/build_index.py manifest.json out --signing-key <sha256>
+## Add to Tachimanga
+
+Browse → Extensions → settings → Extension Repos → **+**, then paste:
+
+```
+https://raw.githubusercontent.com/Hwangbot/Scanlations/repo/index.min.json
+```
+
+Mihon users can use `https://raw.githubusercontent.com/Hwangbot/Scanlations/repo/index.pb` instead.
+
+## How it works
+
+- `main` holds the Kotlin source. Each extension lives in `src/<lang>/<name>/`.
+- Every push to `main` runs `.github/workflows/build.yml`, which builds and signs every extension and publishes `apk/`, `icon/`, `index.min.json`, `index.pb` and `repo.json` to the `repo` branch.
+- Apps only offer an update when `versionCode` in an extension's `build.gradle.kts` goes up.
+
+## One-time setup
+
+Add these repository secrets (Settings → Secrets and variables → Actions): `SIGNING_KEY` (base64 of the keystore), `ALIAS`, `KEY_STORE_PASSWORD`, `KEY_PASSWORD`. Never change the signing key once extensions are installed.
+
+## Credits
+
+Build system, core library and extension source are from [keiyoushi/extensions-source](https://github.com/keiyoushi/extensions-source), licensed under Apache 2.0 (see `LICENSE`).
